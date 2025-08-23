@@ -1,0 +1,21 @@
+{
+    "better-comments.tags": [
+    {
+        "tag": "!",
+        "color": "#49a981",
+        "italic": true,
+        "bold": true
+    },
+    {
+        "tag": "?",
+        "color": "#97c4e1",
+        "italic": true,
+        "bold": true
+    },
+    {
+        "tag": "*",
+        "color": "#fff",
+        "italic": true
+    },
+    ]
+}

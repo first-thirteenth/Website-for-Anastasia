@@ -1,0 +1,271 @@
+/*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * Use a better box model (opinionated).
+ */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Use a more readable tab size (opinionated).
+ */
+:root {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+/**
+ * Correct the line height in all browsers.
+ */
+html {
+  line-height: 1.5;
+}
+
+/**
+ * Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Improve consistency of default fonts in all browsers. (opinionated)
+ */
+body {
+  font-family:
+    system-ui,
+    -apple-system, /* Firefox supports this but not yet system-ui */
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    'Liberation Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Add the correct height in Firefox.
+ */
+hr {
+  height: 0;
+}
+
+/**
+ * Remove the default border in all browsers.
+ */
+hr {
+  color: inherit;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(0,0,0,0.1);
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  margin: 1em 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Add the correct text decoration in Chrome, Edge, and Safari.
+ */
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Edge and Safari.
+ */
+b,strong {
+  font-weight: bolder;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * Remove the margin on controls in Safari.
+ */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge and Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Correct the odd appearance in Chrome and Safari.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the inheritance of border color in Firefox.
+ */
+fieldset {
+  border: 1px solid #a0a0a0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome and Firefox.
+ */
+legend {
+  vertical-align: top;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type='search'] {
+  -webkit-appearance: textfield;
+  appearance: textfield;
+  outline-offset: -2px;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove the default button styling in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* Interactive
+   ========================================================================== */
+
+/* Add the correct display in Edge, IE 10+, and Firefox. */
+details {
+  display: block;
+}
+
+/* Add the correct display in all browsers. */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
