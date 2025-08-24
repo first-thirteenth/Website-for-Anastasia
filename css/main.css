@@ -1,3 +1,6 @@
+/*!----------------------IMPORTS-----------------------*/
+@import url('./styles/home page.css');
+
 /*!----------------------FONTS-----------------------*/
 @font-face {
     font-family: 'Raleway';
@@ -22,6 +25,7 @@
     outline: 0;  
     border: 0;
     box-sizing: border-box; 
+    cursor: default
 } 
 
 *::after,
@@ -43,19 +47,25 @@ li {
 
 /*!----------------------COLORS------------------------*/
 :root {
-    --body-background: #000000;
+    --basic-background: #000000;
     --transition-duration: .3s;
     --transition-font: .7s;
 }
 
 /*!------------------------BODY------------------------*/
 html, body {
-    background-color: var(--body-background);
-    font: 300 24px "Raleway", Arial, sans-serif;
+    background-color: var(--basic-background);
+    font: 300 20px "Raleway", Arial, sans-serif;
+    color: #cacaca;
+    letter-spacing: 0.3em;
     scroll-behavior: smooth;
 }
 
 .container {
-    max-width: 1920px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
+    background: url('/img/backgrounds/feather.jpg');
+    background-size: cover;
 }
