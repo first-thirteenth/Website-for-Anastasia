@@ -1,6 +1,6 @@
 const app = document.getElementById('app');
- 
-//*Цветной экран для каждого пункта меню
+
+//!Цветной экран для каждого пункта меню
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     const menuLinks = document.querySelectorAll('.header__nav-link');
@@ -29,4 +29,3 @@ const app = document.getElementById('app');
     });
   });
 })();
-

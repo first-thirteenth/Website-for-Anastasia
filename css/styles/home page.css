@@ -128,7 +128,7 @@
 }
 
 /**-----------------------BEFORE AND AFTER----------------------*/
-/* Цветной экран для каждого пункта меню */
+/*!Цветной экран для каждого пункта меню */
 body.screen-home,
 body.screen-about,
 body.screen-services,
@@ -137,6 +137,7 @@ body.screen-reviews,
 body.screen-contacts {
   position: relative;
 }
+
 body.screen-home::before {
   content: '';
   position: fixed;
