@@ -1,5 +1,5 @@
 # Website-for-Anastasia
 **Описание**:
-Одностраничный сайт для заказчицы Анастасии.(Легализация иностранцев в Польше).
+One-page website for client Anastasia (Legalization of foreigners in Poland).
 
 
