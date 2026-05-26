@@ -3,14 +3,23 @@
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  animation: fadeScreen 0.3s ease forwards;
 }
 
-@keyframes fadeScreen {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.fadeIn {
+  animation: fadeIn 0.35s ease forwards;
 }
+
+.fadeOut {
+  animation: fadeOut 0.35s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
