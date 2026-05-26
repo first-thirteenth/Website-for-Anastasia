@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { label: "Контакты", href: "#contacts", screen: "contacts" },
 ];
 
-function Nav({ onMenuClick }) {
+function Nav({ onMenuClick, activePage }) {
   const handleClick = (e, screen, href) => {
     e.preventDefault();
     onMenuClick(screen);
@@ -28,7 +28,8 @@ function Nav({ onMenuClick }) {
           <li key={screen} className={styles.item}>
             <a
               href={href}
-              className={styles.link}
+              className={`${styles.link} ${activePage === screen ? styles.active : ""}`.trim()}
+              aria-current={activePage === screen ? "page" : undefined}
               onClick={(e) => handleClick(e, screen, href)}
             >
               {label}

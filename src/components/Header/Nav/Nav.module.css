@@ -43,9 +43,9 @@
   display: block;
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -6px;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background: var(--color-accent);
   opacity: 0;
   transform: scaleX(0);
@@ -68,6 +68,7 @@
 .active {
   opacity: 1;
   color: var(--color-white);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
 }
 
 .avatar {
