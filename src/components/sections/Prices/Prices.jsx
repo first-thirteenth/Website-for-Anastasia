@@ -51,9 +51,7 @@ function Prices() {
             key={plan.name}
             className={`${styles.card} ${plan.highlight ? styles.cardHighlight : ""}`}
           >
-            {plan.highlight && (
-              <span className={styles.badge}>Популярный</span>
-            )}
+            {plan.highlight && <span className={styles.badge}>Популярный</span>}
             <h3 className={styles.planName}>{plan.name}</h3>
             <div className={styles.priceRow}>
               <span className={styles.price}>{plan.price}</span>
