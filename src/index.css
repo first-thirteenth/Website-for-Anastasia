@@ -1,0 +1,62 @@
+/* ── FONTS ── */
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/Google_Sans_Code/GoogleSansCode-VariableFont_wght.ttf");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── CSS VARIABLES ── */
+:root {
+  --color-bg: #000000;
+  --color-accent: #ff0000;
+  --color-text: #cacaca;
+  --color-white: #ffffff;
+  --transition-fast: 0.3s;
+  --transition-slow: 0.7s;
+  --font-main: "Raleway", Arial, sans-serif;
+}
+
+/* ── RESET ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ── BASE ── */
+html,
+body {
+  background-color: var(--color-bg);
+  font: 300 20px var(--font-main);
+  color: var(--color-text);
+  letter-spacing: 0.3em;
+  scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100vh;
+}

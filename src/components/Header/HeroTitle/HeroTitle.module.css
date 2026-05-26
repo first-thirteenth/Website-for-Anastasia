@@ -1,0 +1,24 @@
+.title {
+  max-width: max-content;
+  display: flex;
+  justify-content: center;
+  margin: 25vh auto 0;
+  padding: 20px 0;
+  border-top: 0.3px solid var(--color-white);
+  border-bottom: 0.3px solid var(--color-accent);
+  opacity: 0.7;
+  font-weight: 900;
+  color: var(--color-accent);
+  letter-spacing: 0.3em;
+}
+
+.letter {
+  display: inline-block;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.letter:hover {
+  color: var(--color-white);
+  transform: scale(1.25) rotate(-8deg);
+  text-shadow: 0 2px 8px var(--color-white);
+}
