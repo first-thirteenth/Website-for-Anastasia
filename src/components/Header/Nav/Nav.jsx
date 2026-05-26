@@ -10,11 +10,15 @@ const NAV_ITEMS = [
 ]
 
 function Nav({ onMenuClick }) {
-  const handleClick = (e, screen) => {
+  const handleClick = (e, screen, href) => {
     e.preventDefault()
     onMenuClick(screen)
-    const target = document.querySelector(NAV_ITEMS.find(i => i.screen === screen)?.href)
-    if (target) target.scrollIntoView({ behavior: 'smooth' })
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      const target = document.querySelector(href)
+      if (target) target.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
@@ -25,7 +29,7 @@ function Nav({ onMenuClick }) {
             <a
               href={href}
               className={styles.link}
-              onClick={(e) => handleClick(e, screen)}
+              onClick={(e) => handleClick(e, screen, href)}
             >
               {label}
             </a>
