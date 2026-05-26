@@ -1,94 +1,43 @@
-import {
-  ActionIcon,
-  Avatar,
-  Button,
-  Tooltip,
-  useMantineColorScheme,
-} from "@mantine/core";
-import { FiSun, FiMoon } from "react-icons/fi";
-import { FcGoogle } from "react-icons/fc";
-import { useAuth } from "../../../context/AuthContext";
-import styles from "./Nav.module.css";
+import styles from './Nav.module.css'
 
 const NAV_ITEMS = [
-  { label: "Главная", screen: "home" },
-  { label: "Обо мне", screen: "about" },
-  { label: "Мои услуги", screen: "services" },
-  { label: "Стоимость услуг", screen: "price" },
-  { label: "Отзывы", screen: "reviews" },
-  { label: "Контакты", screen: "contacts" },
-];
+  { label: 'Главная',       href: '#',          screen: 'home' },
+  { label: 'Обо мне',       href: '#about',      screen: 'about' },
+  { label: 'Мои услуги',    href: '#services',   screen: 'services' },
+  { label: 'Стоимость услуг', href: '#price',    screen: 'price' },
+  { label: 'Отзывы',        href: '#reviews',    screen: 'reviews' },
+  { label: 'Контакты',      href: '#contacts',   screen: 'contacts' },
+]
 
-function Nav({ onMenuClick, activePage }) {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const { currentUser, signInWithGoogle, signOut } = useAuth();
+function Nav({ onMenuClick }) {
+  const handleClick = (e, screen, href) => {
+    e.preventDefault()
+    onMenuClick(screen)
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      const target = document.querySelector(href)
+      if (target) target.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
-        {NAV_ITEMS.map(({ label, screen }) => (
+        {NAV_ITEMS.map(({ label, href, screen }) => (
           <li key={screen} className={styles.item}>
             <a
-              href="#"
-              className={`${styles.link} ${activePage === screen ? styles.active : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-                onMenuClick(screen);
-              }}
+              href={href}
+              className={styles.link}
+              onClick={(e) => handleClick(e, screen, href)}
             >
               {label}
             </a>
           </li>
         ))}
       </ul>
-
-      <div className={styles.controls}>
-        <Tooltip
-          label={colorScheme === "dark" ? "Светлая тема" : "Тёмная тема"}
-          position="bottom"
-        >
-          <ActionIcon
-            variant="subtle"
-            color="gray"
-            size="lg"
-            onClick={toggleColorScheme}
-            aria-label="Переключить тему"
-          >
-            {colorScheme === "dark" ? (
-              <FiSun size={18} />
-            ) : (
-              <FiMoon size={18} />
-            )}
-          </ActionIcon>
-        </Tooltip>
-
-        {currentUser ? (
-          <Tooltip
-            label={`Выйти (${currentUser.displayName})`}
-            position="bottom"
-          >
-            <Avatar
-              src={currentUser.photoURL}
-              size="sm"
-              radius="xl"
-              className={styles.avatar}
-              onClick={signOut}
-            />
-          </Tooltip>
-        ) : (
-          <Button
-            size="xs"
-            variant="subtle"
-            leftSection={<FcGoogle size={16} />}
-            onClick={signInWithGoogle}
-            className={styles.loginBtn}
-          >
-            Войти
-          </Button>
-        )}
-      </div>
     </nav>
-  );
+  )
 }
 
-export default Nav;
+export default Nav
