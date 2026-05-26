@@ -1,4 +1,4 @@
-import styles from './Services.module.css'
+import styles from "./Services.module.css";
 
 function Services() {
   return (
@@ -6,7 +6,7 @@ function Services() {
       <h2 className={styles.title}>Мои услуги</h2>
       {/* TODO: feat/section-services */}
     </section>
-  )
+  );
 }
 
-export default Services
+export default Services;

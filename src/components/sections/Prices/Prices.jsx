@@ -1,4 +1,4 @@
-import styles from './Prices.module.css'
+import styles from "./Prices.module.css";
 
 function Prices() {
   return (
@@ -6,7 +6,7 @@ function Prices() {
       <h2 className={styles.title}>Стоимость услуг</h2>
       {/* TODO: feat/section-prices */}
     </section>
-  )
+  );
 }
 
-export default Prices
+export default Prices;
