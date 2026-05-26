@@ -19,9 +19,21 @@ const SERVICES = [
         <path d="M7 8h10M7 12h6" />
       </svg>
     ),
-    title: "Вид на жительство",
+    title: "Вид на жительство (ВНЖ/ПМЖ)",
     description:
       "Помогаю оформить временный и постоянный вид на жительство (карта побыту): документы, запись, сопровождение.",
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 8v4l2 2" />
+        <path d="M8 2.5A10 10 0 0 1 22 12" />
+      </svg>
+    ),
+    title: "Гражданство",
+    description:
+      "Консультация и полное сопровождение в процессе получения польского гражданства: анализ оснований, документы, подача.",
   },
   {
     icon: (
@@ -74,7 +86,7 @@ function Services() {
     <section id="services" className={styles.section}>
       <h2 className={styles.title}>Мои услуги</h2>
       <p className={styles.subtitle}>
-        Полное сопровождение на всех этапах легализации в Польше
+        Юридическое сопровождение на всех этапах легализации в Польше
       </p>
       <ul className={styles.grid}>
         {SERVICES.map((s) => (

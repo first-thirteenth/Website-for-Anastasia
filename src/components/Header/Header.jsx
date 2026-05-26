@@ -6,7 +6,7 @@ function Header() {
   return (
     <div className={styles.headerContainer}>
       <HeroTitle />
-      <p className={styles.subtitle}>Лёгкая легализация в Польше</p>
+      <p className={styles.subtitle}>Юрист по легализации в Польше | Гданьск</p>
       <SocialLinks />
     </div>
   );
