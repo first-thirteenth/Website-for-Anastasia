@@ -1,25 +1,25 @@
-import styles from './Nav.module.css'
+import styles from "./Nav.module.css";
 
 const NAV_ITEMS = [
-  { label: 'Главная',       href: '#',          screen: 'home' },
-  { label: 'Обо мне',       href: '#about',      screen: 'about' },
-  { label: 'Мои услуги',    href: '#services',   screen: 'services' },
-  { label: 'Стоимость услуг', href: '#price',    screen: 'price' },
-  { label: 'Отзывы',        href: '#reviews',    screen: 'reviews' },
-  { label: 'Контакты',      href: '#contacts',   screen: 'contacts' },
-]
+  { label: "Главная", href: "#", screen: "home" },
+  { label: "Обо мне", href: "#about", screen: "about" },
+  { label: "Мои услуги", href: "#services", screen: "services" },
+  { label: "Стоимость услуг", href: "#price", screen: "price" },
+  { label: "Отзывы", href: "#reviews", screen: "reviews" },
+  { label: "Контакты", href: "#contacts", screen: "contacts" },
+];
 
 function Nav({ onMenuClick }) {
   const handleClick = (e, screen, href) => {
-    e.preventDefault()
-    onMenuClick(screen)
-    if (href === '#') {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+    e.preventDefault();
+    onMenuClick(screen);
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      const target = document.querySelector(href)
-      if (target) target.scrollIntoView({ behavior: 'smooth' })
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <nav className={styles.nav}>
@@ -37,7 +37,7 @@ function Nav({ onMenuClick }) {
         ))}
       </ul>
     </nav>
-  )
+  );
 }
 
-export default Nav
+export default Nav;
