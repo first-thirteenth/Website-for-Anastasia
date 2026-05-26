@@ -5,17 +5,26 @@
   right: 0;
   z-index: 1000;
   display: flex;
-  justify-content: center;
-  padding: 20px 40px;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .list {
   display: flex;
-  font-size: 12px;
-  gap: 45px;
-  letter-spacing: 0.05em;
+  font-size: 11px;
+  gap: 36px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .link {
@@ -23,7 +32,10 @@
   color: inherit;
   text-decoration: none;
   cursor: pointer;
-  transition: color var(--transition-fast);
+  opacity: 0.65;
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .link::after {
@@ -31,24 +43,43 @@
   display: block;
   position: absolute;
   left: 0;
-  bottom: -3px;
+  bottom: -4px;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: var(--color-accent);
   opacity: 0;
   transform: scaleX(0);
+  transform-origin: left;
   transition:
     opacity var(--transition-fast),
     transform var(--transition-fast);
 }
 
+.link:hover {
+  opacity: 1;
+}
+
 .link:hover::after,
-.link:focus::after,
 .active::after {
   opacity: 1;
   transform: scaleX(1);
 }
 
 .active {
+  opacity: 1;
   color: var(--color-white);
+}
+
+.avatar {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+}
+
+.loginBtn {
+  font-size: 11px !important;
+  letter-spacing: 0.05em;
 }

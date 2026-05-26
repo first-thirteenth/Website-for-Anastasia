@@ -1,30 +1,33 @@
-import telegramIcon from "../../../assets/img/icons/telegram_logo_icon.svg";
-import instagramIcon from "../../../assets/img/icons/instagram_logo_icon.svg";
-import whatsappIcon from "../../../assets/img/icons/whatsapp_logo_icon.svg";
+import { FaTelegramPlane, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import styles from "./SocialLinks.module.css";
 
 const LINKS = [
-  { href: "https://t.me/AnastaziALappo", icon: telegramIcon, alt: "Telegram" },
+  {
+    href: "https://t.me/AnastaziALappo",
+    Icon: FaTelegramPlane,
+    label: "Telegram",
+  },
   {
     href: "https://www.instagram.com/lapoanastazja/",
-    icon: instagramIcon,
-    alt: "Instagram",
+    Icon: FaInstagram,
+    label: "Instagram",
   },
-  { href: "https://wa.me/48571086455", icon: whatsappIcon, alt: "WhatsApp" },
+  { href: "https://wa.me/48571086455", Icon: FaWhatsapp, label: "WhatsApp" },
 ];
 
-function SocialLinks() {
+function SocialLinks({ fixed = false }) {
   return (
-    <div className={styles.social}>
-      {LINKS.map(({ href, icon, alt }) => (
+    <div className={`${styles.social} ${fixed ? styles.fixed : ""}`}>
+      {LINKS.map(({ href, Icon, label }) => (
         <a
-          key={alt}
+          key={label}
           href={href}
           target="_blank"
           rel="noreferrer"
+          aria-label={label}
           className={styles.link}
         >
-          <img src={icon} alt={alt} className={styles.icon} />
+          <Icon className={styles.icon} />
         </a>
       ))}
     </div>
