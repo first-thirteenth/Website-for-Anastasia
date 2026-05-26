@@ -1,4 +1,4 @@
-import styles from './Reviews.module.css'
+import styles from "./Reviews.module.css";
 
 function Reviews() {
   return (
@@ -6,7 +6,7 @@ function Reviews() {
       <h2 className={styles.title}>Отзывы</h2>
       {/* TODO: feat/section-reviews */}
     </section>
-  )
+  );
 }
 
-export default Reviews
+export default Reviews;

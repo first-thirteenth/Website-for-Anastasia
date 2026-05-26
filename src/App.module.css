@@ -1,12 +1,3 @@
-.colorScreen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  animation: fadeScreen 0.3s ease forwards;
-}
-
-@keyframes fadeScreen {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.pageWrapper {
+  min-height: 100vh;
 }
