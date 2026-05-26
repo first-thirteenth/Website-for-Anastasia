@@ -1,7 +1,14 @@
 .nav {
-  max-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
 }
 
 .list {
@@ -36,7 +43,12 @@
 }
 
 .link:hover::after,
-.link:focus::after {
+.link:focus::after,
+.active::after {
   opacity: 1;
   transform: scaleX(1);
+}
+
+.active {
+  color: var(--color-white);
 }

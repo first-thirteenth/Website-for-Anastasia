@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import Nav from "./components/Header/Nav/Nav";
 import Header from "./components/Header/Header";
 import AboutMe from "./components/sections/AboutMe/AboutMe";
 import Services from "./components/sections/Services/Services";
@@ -16,56 +17,54 @@ const SCREEN_COLORS = {
   contacts: "#222222",
 };
 
-const FADE_IN_MS = 350;
-const FADE_OUT_MS = 350;
+const PAGES = {
+  home: Header,
+  about: AboutMe,
+  services: Services,
+  price: Prices,
+  reviews: Reviews,
+  contacts: Contacts,
+};
+
+const FADE_MS = 350;
 
 function App() {
-  const [activeScreen, setActiveScreen] = useState(null);
+  const [activePage, setActivePage] = useState("home");
+  const [overlayColor, setOverlayColor] = useState(null);
   const [fadingOut, setFadingOut] = useState(false);
   const isAnimating = useRef(false);
 
-  const handleMenuClick = (screen, href) => {
-    if (isAnimating.current) return;
+  const handleMenuClick = (screen) => {
+    if (isAnimating.current || screen === activePage) return;
     isAnimating.current = true;
 
-    setActiveScreen(screen);
+    setOverlayColor(SCREEN_COLORS[screen]);
     setFadingOut(false);
 
     setTimeout(() => {
-      // scroll instantly while the overlay covers the page
-      if (href === "#") {
-        window.scrollTo({ top: 0, behavior: "instant" });
-      } else {
-        const el = document.querySelector(href);
-        if (el) el.scrollIntoView({ behavior: "instant" });
-      }
-
+      setActivePage(screen);
       setFadingOut(true);
 
       setTimeout(() => {
-        setActiveScreen(null);
+        setOverlayColor(null);
         setFadingOut(false);
         isAnimating.current = false;
-      }, FADE_OUT_MS);
-    }, FADE_IN_MS);
+      }, FADE_MS);
+    }, FADE_MS);
   };
+
+  const ActivePage = PAGES[activePage];
 
   return (
     <>
-      {activeScreen && (
+      {overlayColor && (
         <div
           className={`${styles.colorScreen} ${fadingOut ? styles.fadeOut : styles.fadeIn}`}
-          style={{ backgroundColor: SCREEN_COLORS[activeScreen] }}
+          style={{ backgroundColor: overlayColor }}
         />
       )}
-      <Header onMenuClick={handleMenuClick} />
-      <main>
-        <AboutMe />
-        <Services />
-        <Prices />
-        <Reviews />
-        <Contacts />
-      </main>
+      <Nav onMenuClick={handleMenuClick} activePage={activePage} />
+      <ActivePage />
     </>
   );
 }

@@ -1,29 +1,24 @@
 import styles from "./Nav.module.css";
 
 const NAV_ITEMS = [
-  { label: "Главная", href: "#", screen: "home" },
-  { label: "Обо мне", href: "#about", screen: "about" },
-  { label: "Мои услуги", href: "#services", screen: "services" },
-  { label: "Стоимость услуг", href: "#price", screen: "price" },
-  { label: "Отзывы", href: "#reviews", screen: "reviews" },
-  { label: "Контакты", href: "#contacts", screen: "contacts" },
+  { label: "Главная",         screen: "home" },
+  { label: "Обо мне",         screen: "about" },
+  { label: "Мои услуги",      screen: "services" },
+  { label: "Стоимость услуг", screen: "price" },
+  { label: "Отзывы",          screen: "reviews" },
+  { label: "Контакты",        screen: "contacts" },
 ];
 
-function Nav({ onMenuClick }) {
-  const handleClick = (e, screen, href) => {
-    e.preventDefault();
-    onMenuClick(screen, href);
-  };
-
+function Nav({ onMenuClick, activePage }) {
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
-        {NAV_ITEMS.map(({ label, href, screen }) => (
+        {NAV_ITEMS.map(({ label, screen }) => (
           <li key={screen} className={styles.item}>
             <a
-              href={href}
-              className={styles.link}
-              onClick={(e) => handleClick(e, screen, href)}
+              href="#"
+              className={`${styles.link} ${activePage === screen ? styles.active : ""}`}
+              onClick={(e) => { e.preventDefault(); onMenuClick(screen); }}
             >
               {label}
             </a>
