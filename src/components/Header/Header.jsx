@@ -1,5 +1,4 @@
 import HeroTitle from "./HeroTitle/HeroTitle";
-import SocialLinks from "./SocialLinks/SocialLinks";
 import styles from "./Header.module.css";
 
 function Header() {
@@ -7,7 +6,7 @@ function Header() {
     <div className={styles.headerContainer}>
       <HeroTitle />
       <p className={styles.subtitle}>Лёгкая легализация в Польше</p>
-      <SocialLinks />
+      {/* SocialLinks убран, чтобы не дублировать иконки на главной */}
     </div>
   );
 }

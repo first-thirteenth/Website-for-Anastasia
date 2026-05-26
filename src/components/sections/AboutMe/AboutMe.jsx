@@ -6,7 +6,7 @@ function AboutMe() {
       <div className={styles.container}>
         <div className={styles.photoWrapper}>
           <img
-            src="/img/about/welcome.jpg"
+            src="/img/aboutme/welcome.jpg"
             alt="Анастасия Лапо — специалист по легализации в Польше"
             className={styles.photo}
           />

@@ -4,7 +4,7 @@
 }
 
 .fixed {
-  flex-direction: column;
+  flex-direction: row;
   position: fixed;
   bottom: 32px;
   right: 32px;
